@@ -4,14 +4,14 @@ import { TbDiscount } from "react-icons/tb";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { ReactElement } from "react";
 
-interface ServiceItem {
+interface FeatureItem {
   id: number;
   icon: ReactElement;
   title: string;
   desc: string;
 }
 
-export const serviceData: ServiceItem[] = [
+export const featureData: FeatureItem[] = [
   {
     id: 1,
     icon: <TbTruckDelivery />,
