@@ -34,6 +34,6 @@ export const serviceData: ServiceItem[] = [
     id: 4,
     icon: <MdOutlineSupportAgent />,
     title: "24/7 Customer Support",
-    desc: "Contact us 24 hours a day",
+    desc: "Contact us 24 hours",
   },
 ];
