@@ -23,7 +23,7 @@ const NewArrivals = () => {
         {products.map((product) => (
           <img
             key={product.id}
-            className="w-[250px] h-[400px] object-cover"
+            className="w-[250px] h-[350px] object-cover"
             src={product.imgSrc}
             alt=""
           />

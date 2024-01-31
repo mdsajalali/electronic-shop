@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { removeItem } from "../redux/cartSlice";
+import toast from "react-hot-toast";
 
 const CartItem = () => {
   const products = useSelector((state) => state.cart);
@@ -11,6 +12,7 @@ const CartItem = () => {
 
   const handleRemove = (productId) => {
     dispatch(removeItem(productId));
+    toast.success("Product deleted successfully!");
   };
   return (
     <div className="mt-28 max-w-[1200px] mx-auto px-4">

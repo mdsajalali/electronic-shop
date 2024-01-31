@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import CartItem from "./components/CartItem.tsx";
 import RootRoute from "./routes/RootRoute.tsx";
+import  { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
+      <Toaster position="bottom-center" reverseOrder={false} />
     </Provider>
   </React.StrictMode>
 );
