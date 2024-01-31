@@ -1,4 +1,5 @@
 import hero_bg from "../assets/images/hero.png";
+import Button from "./shared/Button";
 const Banner = () => {
   return (
     <div className="bg-[#E3EDF6] min-h-[50vh]">
@@ -16,9 +17,7 @@ const Banner = () => {
               <span className="text-red-500  font-semibold">-10%</span> off this
               week
             </h3>
-            <button className="bg-white mt-5 px-4 py-2 rounded-sm hover:bg-[#0989FF] hover:text-white transition-all font-semibold">
-              Shop Now
-            </button>
+            <Button buttonText="Shop Now" />
           </div>
           <div className="mb-20">
             <img className="w-[300px] md:w-full" src={hero_bg} alt="Hero Bg" />
