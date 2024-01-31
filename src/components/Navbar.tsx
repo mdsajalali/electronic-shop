@@ -2,6 +2,7 @@ import { IoIosSearch } from "react-icons/io";
 import { LuUserCircle2 } from "react-icons/lu";
 import { FiShoppingCart } from "react-icons/fi";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const product = useSelector((state) => state.cart);
   console.log(product);
@@ -35,12 +36,14 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className="relative mr-4 xl:mr-0">
-            <FiShoppingCart className="text-gray-500" size={30} />
-            <span className="absolute flex items-center justify-center -top-2 left-5    bg-[#DC2626] text-white w-6 h-6 rounded-full">
-              {product.length}
-            </span>
-          </div>
+          <Link to="/cartItem">
+            <div className="relative mr-4 xl:mr-0">
+              <FiShoppingCart className="text-gray-500" size={30} />
+              <span className="absolute flex items-center justify-center -top-2 left-5    bg-[#DC2626] text-white w-6 h-6 rounded-full">
+                {product.length}
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
