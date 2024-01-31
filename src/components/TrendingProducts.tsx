@@ -15,7 +15,11 @@ const TrendingProducts: React.FC = () => {
   }, [dispatch]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full border-t-4 border-[#0989FF] border-solid h-12 w-12"></div>
+      </div>
+    );
   }
 
   if (error) {
