@@ -1,14 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FaStar } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
+import { MdDelete } from "react-icons/md";
 import { removeItem } from "../redux/cartSlice";
 import toast from "react-hot-toast";
 
 const CartItem = () => {
   const products = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  console.log(products);
 
   const handleRemove = (productId) => {
     dispatch(removeItem(productId));
@@ -35,10 +34,7 @@ const CartItem = () => {
                   {product.name}
                 </p>
                 <p className="my-1">{product.title}</p>
-              </div>
-              <div className="absolute hidden sm:block top-0 left-0 bg-[#0989FF] px-3 py-[2px]">
-                <h1 className="text-[20px] text-white">{product.id}</h1>
-              </div>
+              </div> 
               <div className="flex gap-5 items-center  ">
                 <div className="flex">
                   <FaStar color={"#FFB21D"} />
@@ -53,9 +49,9 @@ const CartItem = () => {
             </div>
             <div
               onClick={() => handleRemove(product.id)}
-              className="absolute right-0 top-0 cursor-pointer bg-[#0989FF] px-2 py-[2px] text-white hover:bg-[#DC2626] transition-all"
+              className="absolute right-0 top-0 cursor-pointer bg-[#0989FF] px-2 py-[6px] text-white hover:bg-[#DC2626] transition-all"
             >
-              <IoMdClose size={25} />
+              <MdDelete size={25} />
             </div>
           </div>
         ))}
