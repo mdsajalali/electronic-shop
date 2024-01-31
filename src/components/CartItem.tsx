@@ -1,15 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FaStar } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { removeItem } from "../redux/cartSlice";
 
 const CartItem = () => {
   const products = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   console.log(products);
+
+  const handleRemove = (productId) => {
+    dispatch(removeItem(productId));
+  };
   return (
     <div className="mt-28 max-w-[1200px] mx-auto px-4">
       <h1 className="text-2xl font-semibold">
-        Total CartItem {products.length}
+        Total Product : {products.length}
       </h1>
       <div className="my-10">
         {products.map((product) => (
@@ -28,7 +34,7 @@ const CartItem = () => {
                 </p>
                 <p className="my-1">{product.title}</p>
               </div>
-              <div className="absolute top-0 left-0 bg-[#0989FF] px-3 py-[2px]">
+              <div className="absolute hidden sm:block top-0 left-0 bg-[#0989FF] px-3 py-[2px]">
                 <h1 className="text-[20px] text-white">{product.id}</h1>
               </div>
               <div className="flex gap-5 items-center  ">
@@ -43,7 +49,10 @@ const CartItem = () => {
               </div>
               <h1 className="font-bold text-[18px]">{product.price}</h1>
             </div>
-            <div className="absolute right-0 top-0 cursor-pointer bg-[#0989FF] px-2 py-[2px] text-white hover:bg-[#DC2626] transition-all">
+            <div
+              onClick={() => handleRemove(product.id)}
+              className="absolute right-0 top-0 cursor-pointer bg-[#0989FF] px-2 py-[2px] text-white hover:bg-[#DC2626] transition-all"
+            >
               <IoMdClose size={25} />
             </div>
           </div>
