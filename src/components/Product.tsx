@@ -1,6 +1,8 @@
 import { FaStar } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/cartSlice";
 
 interface ProductProps {
   product: {
@@ -12,6 +14,11 @@ interface ProductProps {
 }
 
 const Product = ({ product }: ProductProps) => {
+  const dispatch = useDispatch()
+
+  const handleItem = () => {
+    dispatch(addItem(product))
+  };
   return (
     <div>
       <div className="border-x border-t">
@@ -32,7 +39,7 @@ const Product = ({ product }: ProductProps) => {
           </div>
           <p>(4 Review)</p>
         </div>
-        <div className="flex items-center justify-between mb-5">
+        <div onClick={()=> handleItem(product)} className="flex items-center justify-between mb-5">
           <h1 className="font-bold text-[18px] mt-5">{product.price}</h1>
           <button className=" mt-5 px-3 py-2 rounded-sm bg-[#DC2626]  hover:bg-[#0989FF]   text-white transition-all font-semibold flex items-center gap-2">
             <FiShoppingCart size={20} /> Add To Cart
