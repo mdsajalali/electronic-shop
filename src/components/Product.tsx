@@ -1,5 +1,5 @@
-import { FaStar } from "react-icons/fa6";
-import { FaRegStar } from "react-icons/fa";
+import React from "react";
+import { FaStar, FaRegStar } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { addItem } from "../redux/cartSlice";
@@ -14,13 +14,14 @@ interface ProductProps {
   };
 }
 
-const Product = ({ product }: ProductProps) => {
+const Product: React.FC<ProductProps> = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleItem = () => {
     dispatch(addItem(product));
     toast.success(`${product.name} added to the cart!`);
   };
+
   return (
     <div>
       <div className="border-x border-t">
@@ -42,7 +43,7 @@ const Product = ({ product }: ProductProps) => {
           <p>(4 Review)</p>
         </div>
         <div
-          onClick={() => handleItem(product)}
+          onClick={handleItem}
           className="flex items-center justify-between mb-5"
         >
           <h1 className="font-bold text-[18px] mt-5">{product.price}</h1>
