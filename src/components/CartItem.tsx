@@ -5,10 +5,10 @@ import { MdDelete } from "react-icons/md";
 import { removeItem } from "../redux/cartSlice";
 import toast from "react-hot-toast";
 
+
 const CartItem = () => {
   const products = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
   const handleRemove = (productId) => {
     dispatch(removeItem(productId));
     toast.success("Product deleted successfully!");
