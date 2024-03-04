@@ -1,6 +1,6 @@
 # Electronic Shop
 
-#### Live Link: [Electronic-Shop](https://electronic-shop.vercel.app/)
+#### Live Link: [Electronic-Shop](https://shop-electronic.vercel.app/)
 
 ## All the packages used in this project:
 
